@@ -757,20 +757,18 @@
       }
 
       try {
-        const response = await fetch(APPS_SCRIPT_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        });
+  await fetch(APPS_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: JSON.stringify(data)
+  });
 
-        if (!response.ok) throw new Error("응답 전송 실패");
-
-        showStatus("설문이 정상적으로 제출되었습니다.", "success");
-        localStorage.removeItem(STORAGE_KEY);
-      } catch (error) {
-        downloadJSON(data);
-        showStatus("제출 중 문제가 발생하여 응답 내용을 JSON으로 내려받았습니다. 앱스 스크립트 주소와 배포 설정을 확인해 주세요.", "error");
-      }
+  showStatus("설문이 정상적으로 제출되었습니다.", "success");
+  localStorage.removeItem(STORAGE_KEY);
+} catch (error) {
+  downloadJSON(data);
+  showStatus("제출 중 문제가 발생하여 응답 내용을 JSON으로 내려받았습니다. 앱스 스크립트 주소와 배포 설정을 확인해 주세요.", "error");
+}
     });
 
     restoreDraft();
