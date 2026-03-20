@@ -44,28 +44,11 @@
       margin-bottom: 20px;
     }
 
-    .hero-brand {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin-bottom: 16px;
-    }
-
-    .hero-logo {
-      width: 88px;
-      height: 88px;
-      object-fit: contain;
-      flex: 0 0 auto;
-      border-radius: 18px;
-      background: #f8fafc;
-      border: 1px solid #dbe4f0;
-      padding: 10px;
-    }
-
     .hero-school {
       display: flex;
       flex-direction: column;
       gap: 6px;
+      margin-bottom: 16px;
     }
 
     .hero-school-name {
@@ -306,8 +289,6 @@
     @media (max-width: 760px) {
       .wrap { width: min(100% - 20px, 980px); margin: 18px auto 40px; }
       .hero, .section { padding: 18px; }
-      .hero-brand { flex-direction: column; align-items: flex-start; }
-      .hero-logo { width: 72px; height: 72px; }
       .grid { grid-template-columns: 1fr; }
       .family-head { align-items: flex-start; flex-direction: column; }
       button { width: 100%; }
@@ -318,20 +299,23 @@
 <body>
   <div class="wrap">
     <header class="hero">
- <div class="hero-school" style="margin-bottom:16px;">
-  <div class="hero-school-name">동명중학교</div>
-  <div class="hero-school-sub">학생 이해와 맞춤형 지원을 위한 가정 기초조사</div>
-</div>
+      <div class="hero-school">
+        <div class="hero-school-name">동명중학교</div>
+        <div class="hero-school-sub">학생 이해와 맞춤형 지원을 위한 가정 기초조사</div>
+      </div>
+
       <div class="badge">동명중학교 · 가정 기초조사</div>
       <h1>가정에서 학교로<br>학생 이해를 위한 기초조사</h1>
       <p class="subtitle">
         학생을 더 잘 이해하고 맞춤형 상담·생활지도·학습지도를 하기 위해 가정의 의견을 받습니다.
         아래 문항에 가능한 범위에서 자세히 작성해 주세요.
       </p>
+
       <div class="guide">
         <strong>안내</strong><br>
         1. 별표(<span class="req">*</span>) 문항은 필수입니다.<br>
-        2. 가족 정보는 최대 6명까지 입력할 수 있습니다.
+        2. 가족 정보는 최대 6명까지 입력할 수 있습니다.<br>
+        3. 제출 후에는 잠시 뒤 응답 시트를 확인해 주세요.
       </div>
     </header>
 
@@ -349,27 +333,33 @@
               <option value="3학년">3학년</option>
             </select>
           </div>
+
           <div class="field">
             <label for="classroom">반 <span class="req">*</span></label>
             <input id="classroom" name="classroom" type="text" placeholder="예: 3반" required />
           </div>
+
           <div class="field">
             <label for="number">번호</label>
             <input id="number" name="number" type="text" placeholder="예: 12" />
           </div>
+
           <div class="field">
             <label for="studentName">학생 이름 <span class="req">*</span></label>
             <input id="studentName" name="studentName" type="text" placeholder="학생 이름" required />
           </div>
+
           <div class="field">
             <label for="guardianName">보호자 이름 <span class="req">*</span></label>
             <input id="guardianName" name="guardianName" type="text" placeholder="보호자 이름" required />
           </div>
+
           <div class="field">
             <label for="guardianPhone">보호자 연락처 <span class="req">*</span></label>
             <input id="guardianPhone" name="guardianPhone" type="tel" placeholder="예: 010-1234-5678" required />
             <div class="hint">학교생활 관련 상담을 주로 진행할 보호자의 연락처를 입력해 주세요.</div>
           </div>
+
           <div class="field full">
             <label for="guardianRelation">보호자와 학생의 관계 <span class="req">*</span></label>
             <input id="guardianRelation" name="guardianRelation" type="text" placeholder="예: 어머니, 아버지, 조부모, 후견인" required />
@@ -394,14 +384,17 @@
             <label for="homeAttitude">가정에서의 자녀 생활 태도는 어떤가요? <span class="req">*</span></label>
             <textarea id="homeAttitude" name="homeAttitude" required placeholder="예: 맡은 일, 생활 습관, 가족과의 소통 방식 등을 적어 주세요."></textarea>
           </div>
+
           <div class="field full">
             <label for="schoolLife">최근 자녀의 학교생활은 어땠나요? <span class="req">*</span></label>
             <textarea id="schoolLife" name="schoolLife" required placeholder="예: 학업, 친구 관계, 학교 적응, 생활 태도 등을 적어 주세요."></textarea>
           </div>
+
           <div class="field full">
             <label for="healthNote">건강상 특이사항 <span class="req">*</span></label>
             <textarea id="healthNote" name="healthNote" required placeholder="없을 경우 ‘없음’으로 작성해 주세요."></textarea>
           </div>
+
           <div class="field full">
             <label for="financialSupport">가정 경제 상황 및 지원 필요 여부 <span class="req">*</span></label>
             <select id="financialSupport" name="financialSupport" required>
@@ -411,10 +404,12 @@
               <option value="학비지원 등의 안내는 필요 없습니다">학비지원 등의 안내는 필요 없습니다</option>
             </select>
           </div>
+
           <div class="field full">
             <label for="strengths">자녀의 매력과 긍정적으로 칭찬할 점 <span class="req">*</span></label>
             <textarea id="strengths" name="strengths" required placeholder="학생의 강점, 장점, 좋아하는 모습 등을 자유롭게 적어 주세요."></textarea>
           </div>
+
           <div class="field full">
             <label for="improvements">자녀가 개선했으면 하는 점 <span class="req">*</span></label>
             <textarea id="improvements" name="improvements" required placeholder="지도나 상담 시 참고할 점을 적어 주세요."></textarea>
@@ -438,6 +433,7 @@
               <option value="기타">기타</option>
             </select>
           </div>
+
           <div class="field">
             <label for="studyGuideStyle">자녀 평소 학업 습관 지도 방식 <span class="req">*</span></label>
             <select id="studyGuideStyle" name="studyGuideStyle" required>
@@ -448,18 +444,22 @@
               <option value="기타">기타</option>
             </select>
           </div>
+
           <div class="field full">
             <label for="privateEdu">자녀가 받고 있는 사교육 <span class="req">*</span></label>
             <textarea id="privateEdu" name="privateEdu" required placeholder="예: 수학 / 주 2회 / 90분 / 보충 또는 선행. 없으면 ‘없음’으로 작성해 주세요."></textarea>
           </div>
+
           <div class="field full">
             <label for="studyHabit">자녀 평소 학업 습관의 장점과 문제점 <span class="req">*</span></label>
             <textarea id="studyHabit" name="studyHabit" required placeholder="예: 집중 시간, 숙제 습관, 계획성, 미루는 습관 등을 적어 주세요."></textarea>
           </div>
+
           <div class="field full">
             <label for="homeActivity">자녀가 평소 집에서 하는 활동 <span class="req">*</span></label>
             <textarea id="homeActivity" name="homeActivity" required placeholder="예: 독서, 게임, 운동, 영상 시청, 동생 돌봄, 악기 연습 등"></textarea>
           </div>
+
           <div class="field full">
             <label for="careerHope">보호자가 생각하는 희망 진로 분야 및 그 이유 <span class="req">*</span></label>
             <textarea id="careerHope" name="careerHope" required placeholder="대학명이 아니라 진로 분야를 적어 주세요. 예: 예술, 공학, 보건, 공공서비스 등"></textarea>
@@ -475,6 +475,7 @@
             <label for="teacherNeedToKnow">담임교사가 꼭 알아야 하는 사항 <span class="req">*</span></label>
             <textarea id="teacherNeedToKnow" name="teacherNeedToKnow" required placeholder="없을 경우 ‘없음’으로 작성해 주세요."></textarea>
           </div>
+
           <div class="field full">
             <label for="etcNote">기타 전달사항</label>
             <textarea id="etcNote" name="etcNote" placeholder="추가로 전달하고 싶은 말씀이 있으면 자유롭게 적어 주세요."></textarea>
@@ -537,7 +538,7 @@
   </template>
 
   <script>
-    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxolNkiiiNZdN3zvZ9nYCCMWNKFPG5hzwfLDz0zUe46uAAlLcgv4vhOdTvAIXou4Qlt/exec";
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxv46h6SV_1Iw2IITAV0BTxYJaB6TZN7um5J_FXxguIPoTchv4QZ8uzxLCeHOWN9YtU/exec";
     const FAMILY_MAX = 6;
     const STORAGE_KEY = "dongmyeong-family-survey-v1";
 
@@ -545,7 +546,6 @@
     const familyWrap = document.getElementById("familyWrap");
     const familyTemplate = document.getElementById("familyTemplate");
     const addFamilyBtn = document.getElementById("addFamilyBtn");
-    const downloadBtn = document.getElementById("downloadBtn");
     const resetBtn = document.getElementById("resetBtn");
     const statusBox = document.getElementById("status");
 
@@ -576,15 +576,18 @@
     function addFamilyCard(data = {}) {
       const fragment = familyTemplate.content.cloneNode(true);
       const card = fragment.querySelector(".family-card");
+
       card.querySelectorAll("[data-name]").forEach((input) => {
         const key = input.dataset.name;
         input.value = data[key] ?? "";
       });
+
       card.querySelector(".remove-family").addEventListener("click", () => {
         card.remove();
         reindexFamilies();
         saveDraft();
       });
+
       familyWrap.appendChild(card);
       reindexFamilies();
     }
@@ -635,22 +638,11 @@
       };
     }
 
-    function downloadJSON(data) {
-      const studentName = data.basicInfo.studentName || "학생";
-      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `동명중_가정기초조사_${studentName}.json`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    }
-
     function saveDraft() {
-      const data = getFormData();
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      try {
+        const data = getFormData();
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      } catch (error) {}
     }
 
     function restoreDraft() {
@@ -712,13 +704,6 @@
       saveDraft();
     });
 
-    downloadBtn.addEventListener("click", () => {
-      if (!form.reportValidity()) return;
-      const data = getFormData();
-      downloadJSON(data);
-      showStatus("응답 내용을 JSON 파일로 내려받았습니다.", "success");
-    });
-
     resetBtn.addEventListener("click", () => {
       if (!confirm("입력 중인 내용을 모두 지울까요?")) return;
       form.reset();
@@ -744,16 +729,18 @@
       const data = getFormData();
 
       if (!APPS_SCRIPT_URL) {
-        downloadJSON(data);
-        showStatus("제출용 서버 주소가 연결되지 않아 응답을 JSON으로 내려받았습니다.", "error");
+        showStatus("제출 주소 설정을 확인해 주세요.", "error");
         return;
       }
 
       try {
+        const params = new URLSearchParams();
+        params.append("payload", JSON.stringify(data));
+
         await fetch(APPS_SCRIPT_URL, {
           method: "POST",
           mode: "no-cors",
-          body: JSON.stringify(data)
+          body: params
         });
 
         showStatus("설문이 제출되었습니다. 잠시 후 응답 시트를 확인해 주세요.", "success");
@@ -763,8 +750,7 @@
         addFamilyCard();
         window.scrollTo({ top: 0, behavior: "smooth" });
       } catch (error) {
-        downloadJSON(data);
-        showStatus("제출 중 문제가 발생하여 응답 내용을 JSON으로 내려받았습니다. 앱스 스크립트 배포 설정을 다시 확인해 주세요.", "error");
+        showStatus("제출 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.", "error");
       }
     });
 
