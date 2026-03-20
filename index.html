@@ -314,8 +314,7 @@
       <div class="guide">
         <strong>안내</strong><br>
         1. 별표(<span class="req">*</span>) 문항은 필수입니다.<br>
-        2. 가족 정보는 최대 6명까지 입력할 수 있습니다.<br>
-        3. 제출 후에는 잠시 뒤 응답 시트를 확인해 주세요.
+        2. 가족 정보는 최대 6명까지 입력할 수 있습니다.
       </div>
     </header>
 
@@ -743,7 +742,7 @@
           body: params
         });
 
-        showStatus("설문이 제출되었습니다. 잠시 후 응답 시트를 확인해 주세요.", "success");
+        showStatus("설문이 제출되었습니다.", "success");
         localStorage.removeItem(STORAGE_KEY);
         form.reset();
         familyWrap.innerHTML = "";
